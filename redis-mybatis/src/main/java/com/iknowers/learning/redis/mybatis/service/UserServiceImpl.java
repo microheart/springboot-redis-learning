@@ -23,6 +23,7 @@ public class UserServiceImpl {
     @Autowired
     private RedisTemplate<String, User> redisTemplate;
 
+    @Transactional(readOnly = true)
     User selectById( Long id) {
         if (id == null) {
             throw new NullPointerException("null id");
