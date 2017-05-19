@@ -12,6 +12,7 @@
     <modules>
         <module>redis-messaging</module>
         <module>redis-base</module>
+        <module>redis-mybatis</module>
     </modules>
 
     <parent>
