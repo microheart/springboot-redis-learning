@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -47,6 +48,7 @@ public class UserServiceImpl {
         return user;
     }
 
+    @Transactional
     void insert(User user) {
         logger.info("insert user {} to DB.", user);
         userMapper.insert(user);
@@ -56,6 +58,7 @@ public class UserServiceImpl {
         return userMapper.selectAll();
     }
 
+    @Transactional
     void update(User user) {
         userMapper.update(user);
 
@@ -66,6 +69,7 @@ public class UserServiceImpl {
         }
     }
 
+    @Transactional
     void deleteById(Long id) {
         userMapper.deleteById(id);
 
