@@ -13,6 +13,7 @@
         <module>redis-messaging</module>
         <module>redis-base</module>
         <module>redis-mybatis</module>
+        <module>redis-session</module>
     </modules>
 
     <parent>
